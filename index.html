@@ -1,0 +1,157 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Kitchen</title>
+    <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+    <nav class="Navbar">
+        <h1>Cloud Kitchen</h1>
+        <div class="nav-links">
+            <a href="#" id="loginBtn">Login</a>
+            <a href="#" id="signupBtn">Signup</a>
+            <a href="#" id="trackOrderBtn">Track Order</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="assets/margherita pizza.jpeg" alt=" Margherita Pizza">
+                <h3>Margerita Pizza</h3>
+                <p>Rs. 299</p>
+                <button onclick="addToCart('Margerita Pizza', 299)">Add to Cart</button>
+            </div>
+            <div class="menu-item">
+            <img src="assets/kfc.jpeg" alt="KFC">
+            <h3>KFC</h3>
+            <p>Rs. 499</p>
+            <button onclick="addToCart('KFC', 499)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="assets/pasta.jpeg" alt="Pasta">
+            <h3> Pasta</h3>
+            <p>Rs. 199</p>
+            <button onclick="addToCart('Pasta', 199)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="assets/burger.jpeg" alt="Burger">
+            <h3>Burger</h3>
+            <p>Rs. 249</p>
+            <button onclick="addToCart('Burger', 249)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="assets/zingy parcel.jpg" alt="Zingy Parcel">
+            <h3>Zingy Parcel</h3>
+            <p>Rs. 49</p>
+            <button onclick="addToCart('Zingy Parcel', 49)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="white sauce pasta.jpg" alt="White Sauce Pasta">
+            <h3>White Sauce Pasta</h3>
+            <p>Rs. 149</p>
+            <button onclick="addToCart('White Sauce Pasta', 149)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="assets/cold coffee.jpg" alt="Cold Coffee">
+            <h3>Cold Coffee</h3>
+            <p>Rs. 99</p>
+            <button onclick="addToCart('Cold Coffee', 99)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <img src="assets/fries.jpg" alt="Fries">
+            <h3>Fries</h3>
+            <p>Rs. 149</p>
+            <button onclick="addToCart('Fries', 149)">Add to Cart</button>
+        </div>
+        </div>
+    
+
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <div id="cartItems"></div>
+        <p>Total: Rs. <span id="cartTotal">0</span></p>
+    </div>
+
+    <div class="payment">
+        <h2>Proceed to payment</h2>
+        <select id="paymentMethod">
+            <option value="upi">UPI</option>
+            <option value="credit-card">Credit Card</option>
+            <option value="debit-card">Debit Card</option>
+            <option value="paypal">PayPal</option>
+        </select>
+        <button onclick="processPayment()">Pay Now</button>
+    </div>
+
+        <div class="order-status" id="orderStatus" style="display: none;">
+            <h2>Order Status</h2>
+            <p id="orderMessage"></p>
+        </div>
+    </div>
+
+    <div class="alert" id="alertBox"></div>
+
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <h2>Login</h2>
+                <input type="text" id="loginEmail" placeholder="Email">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <button onclick="login()">Login</button>
+            
+        </div>
+    </div>
+
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Signup</h2>
+                <input type="text" id="signupName" placeholder="Name" required>
+                <input type="text" id="signupEmail" placeholder="Email" required>
+                <input type="password" id="signupPassword" placeholder="Password" >
+                <button onclick="signup()">Signup</button>
+            
+        </div>
+    </div>
+
+    <div class="modal" id="trackOrderModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('trackOrderModal')">&times;</span>
+            <h2>Track Order</h2>
+            <input type="text" id="orderId" placeholder="Enter Order ID" required>
+            <button onclick="trackOrder()">Track</button>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                    <a href="#">Our Story</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+            </div>
+            <div class="footer-section">
+                <h4>Customer Service</h4>
+                <a href="#">Contact Us</a>
+                <a href="#">Returns</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Cloud Kitchen. All rights reserved.
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+ </body>
+ </html>
